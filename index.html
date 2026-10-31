@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grover - Fresh groceries and organic vegetables delivered to your home in as little as 2 hours. Order now!">
+  <meta name="keywords" content="grocery delivery, fresh vegetables, organic fruits, grover store, fast grocery delivery">
+  <meta name="author" content="soxibs48">
+  
+  <title>Grover - Groceries Delivered in 2 Hours | 21-Amaliy Ish</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  
+  <!-- Google Fonts Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header>
+    <nav id="navbar">
+      <div class="container navbar-container">
+        <!-- Logo -->
+        <div class="nav-logo">
+          <a href="#Homepage" aria-label="Grover Home">
+            <img src="./assets/images/grover-logo.svg" alt="Grover Logo" width="138" height="42">
+          </a>
+        </div>
+
+        <!-- Desktop Navigation Items -->
+        <ul class="nav-items" role="menubar">
+          <li role="none"><a href="#Homepage" class="nav-item active-menu" role="menuitem">Home</a></li>
+          <li role="none"><a href="#our-services" class="nav-item" role="menuitem">Menu</a></li>
+          <li role="none"><a href="#whyUs" class="nav-item" role="menuitem">Service</a></li>
+          <li role="none"><a href="#delivery" class="nav-item" role="menuitem">Shop</a></li>
+        </ul>
+
+        <!-- Action Area (Search & Cart & Hamburger) -->
+        <div class="nav-actions">
+          <!-- Search Box -->
+          <div class="search-box">
+            <img src="./assets/images/search icon.svg" alt="Search" class="search-icon-img" width="17" height="17">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search groceries..." autocomplete="off">
+            <!-- Search Results Dropdown -->
+            <div id="searchResults" class="search-results-dropdown">
+              <div class="search-result-item" data-name="Fresh Organic Oranges" data-price="$4.99" data-img="./assets/images/orange-card.png">
+                <img src="./assets/images/orange-card.png" alt="Oranges" class="search-result-thumb">
+                <div>
+                  <div class="search-result-title">Fresh Oranges (1kg)</div>
+                  <div class="search-result-price">$4.99</div>
+                </div>
+              </div>
+              <div class="search-result-item" data-name="Farm Fresh Strawberries" data-price="$6.50" data-img="./assets/images/strawberry.png">
+                <img src="./assets/images/strawberry.png" alt="Strawberries" class="search-result-thumb">
+                <div>
+                  <div class="search-result-title">Fresh Strawberries (500g)</div>
+                  <div class="search-result-price">$6.50</div>
+                </div>
+              </div>
+              <div class="search-result-item" data-name="Organic Vegetable Basket" data-price="$12.00" data-img="./assets/images/delivey-card.png">
+                <img src="./assets/images/delivey-card.png" alt="Vegetables" class="search-result-thumb">
+                <div>
+                  <div class="search-result-title">Organic Veggie Pack</div>
+                  <div class="search-result-price">$12.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shopping Cart Trigger Button -->
+          <div class="cart-btn-wrapper">
+            <button id="cartBtn" class="cart-button" aria-label="Open Shopping Cart">
+              <img src="./assets/images/cart-image.svg" alt="Cart Icon" width="22" height="22">
+              <span id="cartCountBadge" class="cart-badge">2</span>
+            </button>
+          </div>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+            <svg viewBox="0 0 100 100" width="40" height="40">
+              <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+              <path class="line line2" d="M 20,50 H 80" />
+              <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer & Backdrop -->
+  <div id="mobileOverlay" class="mobile-nav-overlay"></div>
+  <aside id="mobileDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-top">
+      <img src="./assets/images/grover-logo.svg" alt="Grover Logo" width="130" style="margin-bottom: 30px;">
+      <div class="mobile-nav-links">
+        <a href="#Homepage" class="mobile-nav-link active-menu">Home <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="#our-services" class="mobile-nav-link">Menu <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="#whyUs" class="mobile-nav-link">Service <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="#delivery" class="mobile-nav-link">Shop <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="#application" class="mobile-nav-link">Get Mobile App <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+    <div class="mobile-nav-bottom">
+      <button class="btn btn-primary open-order-modal-btn" style="width: 100%;">Order Now</button>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="Homepage">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Header Content -->
+          <div class="left-header">
+            <div class="header-badge">
+              <span>More than Faster</span>
+              <img src="./assets/images/strawberry.png" alt="Fresh Strawberry" width="24" height="24">
+            </div>
+
+            <h1 class="header-heading">
+              Groceries delivered in as little as <span>2 hours</span>
+            </h1>
+
+            <p class="header-info">
+              Grocen assures fresh grocery every morning to your family without getting out in this pandemic.
+            </p>
+
+            <div class="header-btns">
+              <button class="btn btn-primary open-order-modal-btn">Order Now</button>
+              <button class="process-btn" id="openProcessModalBtn">
+                <img src="./assets/images/header-play-btn.png" alt="Play Process" width="52" height="52">
+                <span>Order Process</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Header Visual -->
+          <div class="right-header">
+            <div class="header-chef">
+              <!-- Chef Character -->
+              <img id="chef-img" src="./assets/images/Group 2.png" alt="Happy Grover Chef with Groceries" width="480" height="550">
+              
+              <!-- Floating Orange Card -->
+              <img class="orange-img" src="./assets/images/orange-card.png" alt="Fresh Orange Card" width="210" height="90" title="Click to add Orange to Cart!">
+              
+              <!-- Floating Alarm Card -->
+              <img class="alram-img" src="./assets/images/alarm-card.png" alt="Delivery Alarm Card" width="190" height="90" title="Guaranteed 2 Hour Delivery">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section id="our-services">
+      <div class="container">
+        <div class="services-header">
+          <span class="section-tag">What we Serve</span>
+          <h2 class="section-title">Fruit And Vegetable Delivered To Your Home</h2>
+        </div>
+
+        <div class="cards-section">
+          <!-- Card 1: Free Shipping -->
+          <article class="each-card freeship-card">
+            <div class="card-logo">
+              <img src="./assets/images/delivery.svg" alt="Free Shipping Icon" width="48" height="48">
+            </div>
+            <h2>Free Shipping</h2>
+            <p>Enjoy Order in a hand using the freshness of groceries with zero delivery fee on all orders over $30.</p>
+          </article>
+
+          <!-- Card 2: 15 Days Returns -->
+          <article class="each-card return-card">
+            <div class="card-logo">
+              <img src="./assets/images/return.svg" alt="15 Days Return Icon" width="48" height="48">
+            </div>
+            <h2>15 Days Returns</h2>
+            <p>Order in a handy way using the freshness of the groceries. If you're not satisfied, return easily.</p>
+          </article>
+
+          <!-- Card 3: Secure Checkout -->
+          <article class="each-card secure-card">
+            <div class="card-logo">
+              <img src="./assets/images/secure.svg" alt="Secure Checkout Icon" width="48" height="48">
+            </div>
+            <h2>Secure Checkout</h2>
+            <p>If you get rotten items return immediately to us. 100% encrypted and safe payment gateway guarantee.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WHY CHOOSE US SECTION ==================== -->
+    <section id="whyUs">
+      <div class="container">
+        <div class="whyus-grid">
+          <!-- Left Visual with Floating Strawberry Card -->
+          <div class="whysection-hero">
+            <img src="./assets/images/orange-girl.png" alt="Satisfied Customer Holding Fresh Oranges" width="480" height="520">
+            <img class="melting-cheese-card" src="./assets/images/strwaberry-card.png" alt="Fresh Strawberry Card" width="220" height="100" title="100% Organic Strawberries">
+          </div>
+
+          <!-- Right Content -->
+          <div class="whyus-content">
+            <span class="section-tag">Why Choose Us</span>
+            <h2 class="section-title">Find Favorites And Discover New Ones</h2>
+            <p class="section-desc">
+              At vero eos et accusamus et iusto odio dignissimos ducimus blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate provident.
+            </p>
+            <button class="btn btn-primary open-order-modal-btn">Explore Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HOME DELIVERY SECTION ==================== -->
+    <section id="delivery">
+      <div class="container">
+        <div class="delivery-grid">
+          <!-- Left Content -->
+          <div class="delivery-content">
+            <span class="section-tag">Home Delivery</span>
+            <h2 class="section-title">Sit At Home We Will Take Care Your Order</h2>
+            <p class="section-desc">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+            </p>
+            <button class="btn btn-primary open-order-modal-btn">Explore Now</button>
+          </div>
+
+          <!-- Right Delivery Hero -->
+          <div class="delivery-hero">
+            <div class="semi-circle"></div>
+            <img class="delivery-man-img" src="./assets/images/delivery-man.png" alt="Grover Courier on Scooter" width="480" height="480">
+            <img class="delivery-card" src="./assets/images/delivey-card.png" alt="Delivery in 30 Mins Card" width="230" height="95">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MOBILE APP DOWNLOAD SECTION ==================== -->
+    <section id="application">
+      <div class="container">
+        <div class="application-grid">
+          <!-- Left Phone Mockup -->
+          <div class="application-hero">
+            <img src="./assets/images/mobile-mockup.png" alt="Grover Mobile App Mockup" width="420" height="500">
+          </div>
+
+          <!-- Right App Content -->
+          <div class="application-content">
+            <span class="section-tag">Download Our App</span>
+            <h2 class="section-title">Get Groceries App Order More Easily.</h2>
+            <p class="section-desc">
+              Download the official Grover mobile app today. Experience personalized smart baskets, live GPS courier tracking, and instant discounts on your first grocery delivery.
+            </p>
+            <div class="appdownload-btns">
+              <a href="#application" class="app-btn app-store-btn" onclick="showToast('App Store download link coming soon!', 'info')">
+                <img src="./assets/images/apple-icon.svg" alt="Apple Icon" width="28" height="28">
+                <div class="app-btn-texts">
+                  <span class="app-btn-sub">Download on the</span>
+                  <span class="app-btn-title">App Store</span>
+                </div>
+              </a>
+
+              <a href="#application" class="app-btn play-store-btn" onclick="showToast('Google Play download link coming soon!', 'info')">
+                <img src="./assets/images/playstore-logo.svg" alt="Play Store Icon" width="28" height="28">
+                <div class="app-btn-texts">
+                  <span class="app-btn-sub">Get it on</span>
+                  <span class="app-btn-title">Play Store</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Socials -->
+        <div class="footer-col footer-col-brand">
+          <img src="./assets/images/grover-logo.svg" alt="Grover Logo" width="138" height="42">
+          <p>
+            Fast delivery, which is active all over the world, serves with many transportation vehicles. Quality groceries guaranteed.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Company</h3>
+          <div class="footer-links">
+            <a href="#Homepage" class="footer-link">About Us</a>
+            <a href="#our-services" class="footer-link">Blog</a>
+            <a href="#whyUs" class="footer-link">All Products</a>
+            <a href="#delivery" class="footer-link">Location Map</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Services</h3>
+          <div class="footer-links">
+            <a href="#delivery" class="footer-link">Order tracking</a>
+            <a href="#our-services" class="footer-link">Wish List</a>
+            <a href="#Homepage" class="footer-link">My account</a>
+            <a href="#copyright" class="footer-link">Terms & Conditions</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Get in Touch & Newsletter -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get in Touch</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+            Subscribe to our weekly Newsletter and receive updates and secret discount coupons via email.
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Your email address..." required>
+              <button type="submit" class="newsletter-submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div id="copyright" class="copyright-bar">
+        <div class="copyright-content">
+          <div class="copyright">All Rights Reserved © 2026 Grover by <a href="https://github.com/soxibs48-eng" target="_blank" style="color: var(--primary); font-weight: 600;">soxibs48-eng</a></div>
+          <div class="copyright-links">
+            <a href="#copyright">Terms & Conditions</a>
+            <a href="#copyright">Privacy & Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- 1. Shopping Cart Drawer -->
+  <div id="cartBackdrop" class="cart-drawer-backdrop"></div>
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <i class="fa-solid fa-basket-shopping" style="color: var(--primary);"></i>
+        Your Cart (<span id="cartDrawerCount">2</span>)
+      </h3>
+      <button id="closeCartBtn" class="modal-close-btn" aria-label="Close Cart">&times;</button>
+    </div>
+
+    <div id="cartItemsContainer" class="cart-items-list">
+      <!-- Items dynamically populated via main.js -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal" style="font-weight: 600; color: var(--dark);">$11.49</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Delivery</span>
+        <span style="font-weight: 600; color: var(--accent-green);">FREE</span>
+      </div>
+      <div class="cart-summary-total">
+        <span>Total</span>
+        <span id="cartTotal">$11.49</span>
+      </div>
+      <button id="checkoutBtn" class="btn btn-primary" style="width: 100%;">
+        Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- 2. Order Process Modal -->
+  <div id="processModal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">How Grover Order Process Works</h3>
+        <button id="closeProcessBtn" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="process-steps">
+          <div class="process-step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Select Fresh Groceries</h4>
+              <p>Browse through over 2,000+ local fresh produce, organic dairy, and everyday kitchen essentials on our website or mobile app.</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Sanitized Express Packing</h4>
+              <p>Our professional in-store pickers carefully inspect each fruit and vegetable, packing your basket with thermo-insulated, sealed bags.</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Delivered in 2 Hours or Free!</h4>
+              <p>Our dedicated courier rides straight to your door with contactless delivery. Enjoy garden-fresh produce without stepping outside.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 26px; text-align: center;">
+          <button class="btn btn-primary open-order-modal-btn" style="width: 100%;">Start Your Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Express Order Modal -->
+  <div id="orderModal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Express Grocery Order</h3>
+        <button id="closeOrderModalBtn" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="expressOrderForm" onsubmit="handleExpressOrder(event)">
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Your Name</label>
+            <input type="text" required placeholder="e.g. Soxib S." style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-light); border-radius: 8px; font-family: inherit;">
+          </div>
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Phone Number</label>
+            <input type="tel" required placeholder="+998 90 123 45 67" style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-light); border-radius: 8px; font-family: inherit;">
+          </div>
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Delivery Address</label>
+            <input type="text" required placeholder="Street address, Apartment / House No." style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-light); border-radius: 8px; font-family: inherit;">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm & Place Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Floating Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- 5. Toast Notifications Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Vanilla Tilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <!-- Main Application Script -->
+  <script src="./js/main.js"></script>
+</body>
+</html>
